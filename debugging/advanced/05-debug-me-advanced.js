@@ -42,7 +42,6 @@ function findHighestScoring(array, num) {
   }
 
   multipleOfNum = Math.floor(array.length / num);
-  console.log(`The multiple variable is ${multipleOfNum}`);
 
   const newArray = array.filter((object, index) => {
     return index < multipleOfNum;
