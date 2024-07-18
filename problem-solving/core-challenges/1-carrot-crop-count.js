@@ -1,11 +1,7 @@
 const { check, runTest, skipTest } = require("../../test-api/index.js");
 
 function carrotCropCount(gardenPatch) {
-  /*
-  Spring came, the desire to have a veggie garden overwhelmed you and so you planted some seeds. Now they are all grown, how many are carrots?
-
-  You are given a garden patch represented by a nested array. Count the total number of carrots found, and return it.
-  */
+  return gardenPatch.flat().filter( (crop) =>  crop === "carrot").length;
 }
 
 runTest("counts the carrots when there are only carrots present", function () {
@@ -21,7 +17,7 @@ runTest("counts the carrots when there are only carrots present", function () {
   ).isEqualTo(6);
 });
 
-skipTest("counts the carrots given mixed veg patch", function () {
+runTest("counts the carrots given mixed veg patch", function () {
   check(carrotCropCount([["carrot", "cabbage"]])).isEqualTo(1);
   check(
     carrotCropCount([["carrot", "radish", "carrot", "beetroot"]])

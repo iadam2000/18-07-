@@ -1,11 +1,22 @@
 const { check, runTest, skipTest } = require("../../test-api/index.js");
 
 function partyPropCheck(stock, colour) {
-  /*
-  Its nearly party time! But how many items do we have to fit the colour scheme? 
 
-  You will be given a stock object, and a colour. Return the number of items which match the given colour. The colour "rainbow" is a match for all colours.
-  */
+  let total = 0;
+  for (let i in stock) {
+
+    if (stock === undefined || stock[i] === undefined || stock[i][colour] === undefined) {
+      continue;
+    } else {
+      
+      total += stock[i][colour] 
+    }
+
+  }
+
+  return total;
+
+
 }
 
 runTest("counts the props when only one item is in stock", function () {
@@ -43,7 +54,7 @@ runTest("counts the props when only one item is in stock", function () {
   ).isEqualTo(30);
 });
 
-skipTest("counts the items where multiple items are in the stock", function () {
+runTest("counts the items where multiple items are in the stock", function () {
   check(
     partyPropCheck(
       {
