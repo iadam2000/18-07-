@@ -1,10 +1,15 @@
 const { check, runTest, skipTest } = require("../../test-api/index.js");
 
 function shoutNames(names) {
+  if (names.length === 0){
+    return names;
+  }
+
   const shoutedNames = names.forEach((name) => {
-    return word + "!";
+    return names + "!";
   });
   return shoutedNames;
+  
 }
 
 // Please do not change code below this line. You do not need to alter the tests or the test suite.
