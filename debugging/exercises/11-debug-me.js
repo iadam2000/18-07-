@@ -6,7 +6,7 @@ function findKnownFlyers(superheroes) {
   const knownFlyers = [];
 
   for (let i = 0; i < superheroes.length; i++) {
-    if (superheroes[i].ability === "flying" || superheroes[i].isAnonymous) {
+    if (superheroes[i].ability === "flying" && !superheroes[i].isAnonymous ) {
       knownFlyers.push(superheroes[i]);
     }
   }

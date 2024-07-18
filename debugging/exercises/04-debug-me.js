@@ -3,13 +3,14 @@ const { check, runTest, skipTest } = require("../../test-api/index.js");
 // Fix the function below to pass the test!
 
 function findMentorsFavouritePlant(mentor) {
+  console.log(mentor, "mentor console log here ");
   const plants = {
     Rob: "Money Plant",
     Hannah: "Sunflower",
     Lewis: "Cactus",
     Harrison: "Venus Fly Trap",
   };
-  return plants.mentor;
+  return plants[mentor];
 }
 
 // Please do not change code below this line. You do not need to alter the tests or the test suite.

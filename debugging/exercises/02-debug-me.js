@@ -3,7 +3,7 @@ const { check, runTest, skipTest } = require("../../test-api/index.js");
 // Fix the function below to pass the test!
 
 function getCatGreeting() {
-  const catName = "Jewls";
+  const catName = "Jewels";
   return `Hello, I am a cat and my name is ${catName}`;
 }
 
