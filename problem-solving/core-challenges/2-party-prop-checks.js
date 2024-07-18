@@ -3,13 +3,22 @@ const { check, runTest, skipTest } = require("../../test-api/index.js");
 function partyPropCheck(stock, colour) {
 
   let total = 0;
+  
   for (let i in stock) {
 
-    if (stock === undefined || stock[i] === undefined || stock[i][colour] === undefined) {
+    if (stock === undefined || stock[i] === undefined) {
       continue;
     } else {
-      
-      total += stock[i][colour] 
+
+      if (stock[i][colour] !== undefined){
+      total += stock[i][colour] ;
+      }
+
+      if (stock[i]["rainbow"] !== undefined) {
+        total += stock[i]["rainbow"];
+      } else {
+      }
+
     }
 
   }
@@ -101,7 +110,7 @@ runTest("counts the items where multiple items are in the stock", function () {
   ).isEqualTo(13);
 });
 
-skipTest("counts rainbow items in addition to those of specific", function () {
+runTest("counts rainbow items in addition to those of specific", function () {
   check(
     partyPropCheck(
       {
