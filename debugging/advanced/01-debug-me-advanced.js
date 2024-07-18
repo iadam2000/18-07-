@@ -5,11 +5,11 @@ function shoutNames(names) {
     return names;
   }
 
-  const shoutedNames = names.forEach((name) => {
-    return names + "!";
+  const shoutedNames = names.map((name) => {
+    return name + "!";
   });
   return shoutedNames;
-  
+
 }
 
 // Please do not change code below this line. You do not need to alter the tests or the test suite.

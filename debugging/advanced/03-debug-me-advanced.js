@@ -2,7 +2,7 @@ const { check, runTest, skipTest } = require("../../test-api/index.js");
 
 function getCapitalisedArtists(arr) {
   const artists = arr.map((pair) => {
-    return pair.split("-");
+    return pair.split("-")[0].toUpperCase().trim();
   });
 
   return artists;

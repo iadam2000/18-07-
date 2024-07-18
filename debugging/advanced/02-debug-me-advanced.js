@@ -2,10 +2,11 @@ const { check, runTest, skipTest } = require("../../test-api/index.js");
 
 function calculateCompoundInterest(value, interestRate, years) {
   let bankAccount = value;
-  for (let i = 1; i <= years.length; i++) {
+  for (let i = 1; i <= years; i++) {
     bankAccount *= interestRate + 1;
   }
-  return value;
+  bankAccount = parseFloat(bankAccount.toFixed(2));
+  return bankAccount;
 }
 
 // Please do not change code below this line. You do not need to alter the tests or the test suite.

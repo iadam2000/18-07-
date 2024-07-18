@@ -2,8 +2,19 @@ const { check, runTest, skipTest } = require("../../test-api/index.js");
 const { sumArray } = require("./utils/sum.js");
 
 function getBasketCost(arr) {
+
+  if (arr.length === 0) {
+    return "The total cost of the fruits is £0";
+  }
+
   const costs = arr.map((fruitObj) => fruitObj.cost);
-  const total = sumArray(costs);
+
+  console.log(costs);
+
+  var total = costs.reduce((accumulator, currentValue) => {
+    return accumulator + currentValue
+  },0);
+
   return `The total cost of the fruits is £${total}`;
 }
 
